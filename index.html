@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Bid - Online Auction System </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="heading">
+                <div class="two">
+                    <h1>Go Bid</h1>
+                    <span>Online Auction System</span>
+                </div>
+            </div>
+            <div class="links">
+                <a id="link" href="#">Auction Home</a>
+                <a id="link" href="#">FAQs</a>
+                <a id="loginLink" href="#" onclick="showLoginBar(); return false;">Login</a>
+                <a id="link" href="#">About us</a>
+                <a id="link" href="#">Contact us</a>
+            </div>
+        </div>
+
+    <div class="login-bar" id="loginBar" style="display:none;">
+        <span id="welcomeMsg"></span>
+        <input type="text" id="loginInput" placeholder="Enter username or email">
+        <button id="loginBtn" onclick="login()">Login</button>
+        <button id="logoutBtn" onclick="logout()" style="display:none;">Logout</button>
+    </div>
+        
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for items...">
+            <button onclick="searchItems()">Search</button>
+        </div>
+
+        <div class="add-product-section" id="addProductSection">
+            
+        </div>
+
+        <div class="item-grid" id="itemGrid">
+            
+        </div>
+    </div>
+
+    <div class="modal" id="bidModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBidModal()">&times;</span>
+            <h2 id="modalTitle">Place Bid</h2>
+            <div id="modalDesc"></div>
+            <div id="modalStatus"></div>
+            <input type="number" id="bidAmount" placeholder="Enter your bid (₹)">
+            <button onclick="submitBid()">Submit Bid</button>
+            <div id="bidHistory"></div>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
